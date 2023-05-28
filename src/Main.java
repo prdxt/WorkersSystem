@@ -8,6 +8,10 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+
+        System.out.println("Hello World");
+
+
         Employee employee1 = new Employee("John", "Doe", "Manager", 1, 75000);
         Employee employee2 = new Employee("Jane", "Smith", "Accountant", 2, 60000);
         Employee employee3 = new Employee("Michael", "Johnson", "Accountant", 3, 55000);
