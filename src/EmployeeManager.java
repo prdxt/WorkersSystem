@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class EmployeeManager {
@@ -8,9 +11,27 @@ public class EmployeeManager {
         this.employees = employees;
     }
 
-    public  void addEmployee(Employee employee){
-        Integer keyEmployee = employee.getEmployeeID();
-        employees.put(keyEmployee,employee);
+    public  void addEmployee() throws IOException {
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.println("Podaj imie pracownika:");
+        String firstName = reader.readLine();
+
+        System.out.println("Podaj nazwisko pracownika:");
+        String lastName = reader.readLine();
+
+        System.out.println("Podaj stanowisko pracownika:");
+        String position = reader.readLine();
+
+        System.out.println("Podaj zarobki pracownika:");
+        int salary = Integer.parseInt(reader.readLine());
+
+        Employee newEmplyee = new Employee(firstName,lastName,position,salary);
+        employees.put(newEmplyee.getEmployeeID(), newEmplyee);
+
+
+
     }
     public void removeEmployee(Employee employee){
         if(employees.containsKey(employee.getEmployeeID()))
