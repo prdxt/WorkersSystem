@@ -42,4 +42,8 @@ public class Employee {
     public void setPosition(String position) {
         this.position = position;
     }
+
+    public Object getLastName() {
+        return lastName;
+    }
 }

@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        System.out.println("Hello World");
+        System.out.println("Dominik Jajko");
 
 
         HashMap<Integer,Employee> employeeHashMap = new HashMap<>();
@@ -24,7 +24,7 @@ public class Main {
             System.out.println("2.Usuń pracownika");
             System.out.println("3.Zaktualizuj dane o pracowniku");
             System.out.println("4.Wyświetl liste wszystkich pracownikow");
-            System.out.println("5.Wyszukaj pracownika po pozycji");
+            System.out.println("5.Wyszukaj pracownika po nazwisku");
             System.out.println("Inna wartosc zakonczy program");
             int input = Integer.parseInt(bufferedReader.readLine());
             switch (input){
@@ -52,8 +52,9 @@ public class Main {
                 }
                 case 5:
                 {
-                    String position = bufferedReader.readLine();
-                    HashSet<Employee> employeeHashSet = employeeManager.searchEmployeesByPosition(position);
+                    System.out.println("Podaj nazwisko pracownika którego chcesz wyszukać: ");
+                    String lastName = bufferedReader.readLine();
+                    HashSet<Employee> employeeHashSet = employeeManager.searchEmployeesByLastName(lastName);
                     for (Employee employee: employeeHashSet
                          ) {
                         System.out.println(employee);
