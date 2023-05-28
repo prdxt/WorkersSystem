@@ -12,25 +12,12 @@ public class Main {
         System.out.println("Hello World");
 
 
-        Employee employee1 = new Employee("John", "Doe", "Manager",  75000);
-        Employee employee2 = new Employee("Jane", "Smith", "Accountant" , 60000);
-        Employee employee3 = new Employee("Michael", "Johnson", "Accountant", 55000);
-        Employee employee4 = new Employee("Emily", "Jones", "Marketing Specialist", 50000);
-        Employee employee5 = new Employee("David", "Brown", "Accountant", 45000);
-        Employee employee6 = new Employee("Laura", "Taylor", "Human Resources Manager", 70000);
-        Employee employee7 = new Employee("Kevin", "Wilson", "IT Specialist", 60000);
-        Employee employee8 = new Employee("Samantha", "Davis", "Customer Service Representative", 40000);
-
         HashMap<Integer,Employee> employeeHashMap = new HashMap<>();
         EmployeeManager employeeManager = new EmployeeManager(employeeHashMap);
-        employeeManager.addEmployee(employee1);
-        employeeManager.addEmployee(employee2);
-        employeeManager.addEmployee(employee3);
-        employeeManager.addEmployee(employee4);
-        employeeManager.addEmployee(employee5);
+
+
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-
         while (true)
         {
             System.out.println("1.Dodaj pracownika");
@@ -43,7 +30,7 @@ public class Main {
             int input = Integer.parseInt(bufferedReader.readLine());
             switch (input){
                 case 1:
-                    employeeManager.addEmployee(employee7);
+                    employeeManager.addEmployee();
                     break;
                 case 2:
                 {
