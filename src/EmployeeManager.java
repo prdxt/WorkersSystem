@@ -40,13 +40,25 @@ public class EmployeeManager {
             System.out.println("Pracownik o takim ID nie istnieje");
     }
 
-    public void updateEmployee(int employeeID, Employee newEmployee){
-        if(employees.containsKey(employeeID))
-        {
-            employees.put(employeeID,newEmployee);
+    public void updateEmployee(int employeeID) throws IOException {
+
+        if (employees.containsKey(employeeID)){
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+            System.out.println("Podaj nowe stanowisko pracownika:");
+            String newPosition = reader.readLine();
+
+            System.out.println("Podaj nowe zarobki pracownika:");
+            int newSalary = Integer.parseInt(reader.readLine());
+
+            Employee employee = employees.get(employeeID);
+            employee.setSalary(newSalary);
+            employee.setPosition(newPosition);
+
+        }else {
+            System.out.println("Nie znaleziono pracownika o danym ID");
         }
-        else
-            System.out.println("Pracownik o takim ID nie istnieje");
+
     }
     public Employee searchEmployeeByID(int employeeID) {
         if(employees.containsKey(employeeID)){

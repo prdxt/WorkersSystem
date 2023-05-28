@@ -40,11 +40,9 @@ public class Main {
                 }
                 case 3:
                 {
-                    int id = Integer.parseInt(bufferedReader.readLine());
-                    Employee employee = employeeManager.searchEmployeeByID(id);
-                    if(employee != null){
-                    employee.setSalary(10000);
-                    employeeManager.updateEmployee(id,employee);}
+                    System.out.println("Podaj ID pracownika, którego chcesz zaaktualizować:");
+                    int employeeID = Integer.parseInt(bufferedReader.readLine());
+                    employeeManager.updateEmployee(employeeID);
                     break;
 
                 }
